@@ -41,7 +41,8 @@ struct NetworkDataSource<T: Codable>: NetworkDataSourceType {
 
           if let data = data {
             let model = try? JSONDecoder().decode(T.self, from: data)
-            print("Success: \(String(describing: model))")
+            print("================= Network Success =================")
+            //print("\(String(describing: model))")
             completion(model)
           }
       }
