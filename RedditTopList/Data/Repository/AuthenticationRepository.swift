@@ -1,5 +1,5 @@
 //
-//  TopListRepository.swift
+//  AuthenticationRepository.swift
 //  RedditTopList
 //
 //  Created by Lucas Pedrazoli on 21/06/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TopListRepository: TopListRepositoryType {
+struct AuthenticationRepository: AuthenticationRepositoryType {
   let network: NetworkDataSourceType
   let userSession: UserSessionDataSourceType
   var requestFactory: RequestFactory
@@ -20,12 +20,7 @@ struct TopListRepository: TopListRepositoryType {
     self.requestFactory = requestFactory
   }
 
-  func getList(_ completion: @escaping (TopList?) -> Void) {
-    var request = requestFactory.createTopList()
-    let token: String? = userSession.read(for: .accessToken)
-    request.addBearerToken(token)
-    network.doRequest(request, completion: { (model: TopList?) in
-      completion(model)
-    })
+  func refreshToken() {
+    
   }
 }
