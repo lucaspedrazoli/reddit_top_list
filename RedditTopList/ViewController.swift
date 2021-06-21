@@ -21,12 +21,12 @@ class ViewController: UIViewController {
   }
 
   private func callApi() {
-    var request = Request(endpoint: .topList, method: .GET)
-    request.addHeader("Authorization", "Bearer ")
-    let network = NetworkDataSource()
-    network.doRequest(request, completion: { (value: TopList?) in
-      print(value?.data.children.first?.data.title ?? "error")
-    })
+//    var request = Request(endpoint: .topList, method: .GET)
+//    request.addHeader("Authorization", "Bearer ")
+//    let network = NetworkDataSource()
+//    network.doRequest(request, completion: { (value: TopList?) in
+//      print(value?.data.children.first?.data.title ?? "error")
+//    })
   }
 }
 
