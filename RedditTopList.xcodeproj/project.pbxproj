@@ -21,6 +21,8 @@
 		7565519D2681146B000F8976 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565519C2681146B000F8976 /* Endpoint.swift */; };
 		7565519F268115C9000F8976 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565519E268115C9000F8976 /* Request.swift */; };
 		756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551A026811644000F8976 /* NetworkDataSourceType.swift */; };
+		756551A62681193A000F8976 /* TopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551A52681193A000F8976 /* TopList.swift */; };
+		756551A826811A66000F8976 /* TopListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551A726811A65000F8976 /* TopListElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		7565519C2681146B000F8976 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7565519E268115C9000F8976 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		756551A026811644000F8976 /* NetworkDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSourceType.swift; sourceTree = "<group>"; };
+		756551A52681193A000F8976 /* TopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopList.swift; sourceTree = "<group>"; };
+		756551A726811A65000F8976 /* TopListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		75655196268113F8000F8976 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				756551A42681191A000F8976 /* Entity */,
 				7565519926811411000F8976 /* Network */,
 			);
 			path = Data;
@@ -160,6 +165,15 @@
 				7565519E268115C9000F8976 /* Request.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		756551A42681191A000F8976 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				756551A52681193A000F8976 /* TopList.swift */,
+				756551A726811A65000F8976 /* TopListElement.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +312,8 @@
 				75655164268110AA000F8976 /* AppDelegate.swift in Sources */,
 				75655166268110AA000F8976 /* SceneDelegate.swift in Sources */,
 				7565519F268115C9000F8976 /* Request.swift in Sources */,
+				756551A62681193A000F8976 /* TopList.swift in Sources */,
+				756551A826811A66000F8976 /* TopListElement.swift in Sources */,
 				756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
 				756551982681140C000F8976 /* NetworkDataSource.swift in Sources */,
