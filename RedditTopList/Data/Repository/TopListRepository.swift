@@ -7,18 +7,25 @@
 
 import Foundation
 
-struct TopListRepository {
+class TopListRepository: TopListRepositoryType {
   let network: NetworkDataSourceType
   let userSession: UserSessionDataSourceType
-  
+  var requestFactory: RequestFactory
 
   init(network: NetworkDataSourceType,
-       userSession: UserSessionDataSourceType) {
+       userSession: UserSessionDataSourceType,
+       requestFactory: RequestFactory) {
     self.network = network
     self.userSession = userSession
+    self.requestFactory = requestFactory
   }
 
-  func getList(_ completion: (TopList) -> Void) {
-
+  func getList(_ completion: @escaping (TopList?) -> Void) {
+    var request = requestFactory.createTopList()
+    let token: String? = userSession.read(for: .accessToken)
+    request.addBearerToken(token)
+    network.doRequest(request, completion: { (model: TopList?) in
+      completion(model)
+    })
   }
 }

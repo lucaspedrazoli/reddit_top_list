@@ -8,5 +8,6 @@
 import Foundation
 
 protocol TopListRepositoryType {
-  
+
+  func getList(_ completion: @escaping (TopList?) -> Void)
 }
