@@ -9,6 +9,6 @@ import Foundation
 
 protocol UserSessionDataSourceType {
 
-  func read<T>(for key: String) -> T?
-  func write<T>(_ value: T, for key: String)
+  func read<T>(for key: UserSessionKey) -> T?
+  func write<T>(_ value: T, for key: UserSessionKey)
 }

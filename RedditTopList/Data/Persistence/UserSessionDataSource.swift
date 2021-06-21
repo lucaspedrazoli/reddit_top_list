@@ -15,13 +15,13 @@ struct UserSessionDataSource: UserSessionDataSourceType {
     self.userDefaults = userDefaults
   }
 
-  func read<T>(for key: String) -> T? {
-    let value = UserDefaults.standard.object(forKey: key)
+  func read<T>(for key: UserSessionKey) -> T? {
+    let value = UserDefaults.standard.object(forKey: key.rawValue)
     return value as? T
   }
 
-  func write<T>(_ value: T, for key: String) {
+  func write<T>(_ value: T, for key: UserSessionKey) {
     let value = value as Any
-    UserDefaults.standard.set(value, forKey: key)
+    UserDefaults.standard.set(value, forKey: key.rawValue)
   }
 }
