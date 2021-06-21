@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     storage.write("foo", for: "bar")
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
       let value: String? = storage.read(for: "bar")
-      print(value)
+      print(value ?? "error")
     }
   }
 
