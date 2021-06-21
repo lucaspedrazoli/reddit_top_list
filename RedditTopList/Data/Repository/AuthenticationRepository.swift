@@ -21,6 +21,6 @@ struct AuthenticationRepository: AuthenticationRepositoryType {
   }
 
   func refreshToken() {
-    
+
   }
 }

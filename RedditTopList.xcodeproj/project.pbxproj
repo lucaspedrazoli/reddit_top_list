@@ -33,6 +33,7 @@
 		756551BC26815B58000F8976 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551BB26815B58000F8976 /* QueryKey.swift */; };
 		756551BE26815DD6000F8976 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551BD26815DD6000F8976 /* AuthenticationRepository.swift */; };
 		756551C026815DF8000F8976 /* AuthenticationRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551BF26815DF8000F8976 /* AuthenticationRepositoryType.swift */; };
+		756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C126815EA4000F8976 /* UserSessionEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		756551BB26815B58000F8976 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
 		756551BD26815DD6000F8976 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		756551BF26815DF8000F8976 /* AuthenticationRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryType.swift; sourceTree = "<group>"; };
+		756551C126815EA4000F8976 /* UserSessionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				756551A52681193A000F8976 /* TopList.swift */,
 				756551A726811A65000F8976 /* TopListElement.swift */,
+				756551C126815EA4000F8976 /* UserSessionEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				756551B826815900000F8976 /* UserSessionKey.swift in Sources */,
 				756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */,
 				756551BC26815B58000F8976 /* QueryKey.swift in Sources */,
+				756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
 				756551982681140C000F8976 /* NetworkDataSource.swift in Sources */,
 				756551B6268156E3000F8976 /* HeaderKey.swift in Sources */,
