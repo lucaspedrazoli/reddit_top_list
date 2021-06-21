@@ -8,7 +8,6 @@
 import Foundation
 
 protocol NetworkDataSourceType {
-  associatedtype T: Codable
 
-  func doRequest(_ request: Request, completion: @escaping (_ model: T?) -> Void)
+  func doRequest<T: Codable>(_ request: Request, completion: @escaping (_ model: T?) -> Void)
 }

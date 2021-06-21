@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NetworkDataSource<T: Codable>: NetworkDataSourceType {
+struct NetworkDataSource: NetworkDataSourceType {
 
   private let session: URLSession
 
@@ -15,7 +15,7 @@ struct NetworkDataSource<T: Codable>: NetworkDataSourceType {
     self.session = session
   }
 
-  func doRequest(_ request: Request, completion: @escaping (T?) -> Void) {
+  func doRequest<T: Codable>(_ request: Request, completion: @escaping (T?) -> Void) {
     let _request = request.build()
     let task = session
          .dataTask(with: _request) { (data, response, error) in
