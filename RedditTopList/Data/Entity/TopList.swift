@@ -8,10 +8,10 @@
 import Foundation
 
 struct TopList: Codable {
-  private let data: ListData
+  let data: ListData
 }
 
-private extension TopList {
+extension TopList {
   struct ListData: Codable {
     let children: [ListElementData]
   }

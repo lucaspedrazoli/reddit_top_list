@@ -25,12 +25,17 @@ struct NetworkDataSource<T: Codable>: NetworkDataSourceType {
              return
            }
 
-          guard response as? HTTPURLResponse != nil else {
+          guard let httpResponse = response as? HTTPURLResponse  else {
             let info = [
               "http_response_error": "unexpected_response_error",
               "url": "\(String(describing: _request.url))"
             ]
             print(info)
+            return
+          }
+
+          guard 200..<300 ~= httpResponse.statusCode else {
+            print("unexpected status code: \(httpResponse.statusCode)")
             return
           }
 
