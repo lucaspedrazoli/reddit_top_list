@@ -33,12 +33,8 @@ struct Request {
                                             resolvingAgainstBaseURL: false)!
     urlComponents.queryItems = params
     var urlRequest = URLRequest(url: urlComponents.url!)
+    _ = header.map { urlRequest.addValue($0.value, forHTTPHeaderField: $0.key) }
     urlRequest.httpMethod = method.rawValue
     return urlRequest
-  }
-
-  mutating func addDefaultParams() {
-    let format = URLQueryItem(name: "format", value: "json")
-    addQueryItem(format)
   }
 }
