@@ -29,6 +29,8 @@
 		756551B2268138B5000F8976 /* TopListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551B1268138B5000F8976 /* TopListRepositoryType.swift */; };
 		756551B6268156E3000F8976 /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551B5268156E3000F8976 /* HeaderKey.swift */; };
 		756551B826815900000F8976 /* UserSessionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551B726815900000F8976 /* UserSessionKey.swift */; };
+		756551BA26815AE8000F8976 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551B926815AE8000F8976 /* RequestFactory.swift */; };
+		756551BC26815B58000F8976 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551BB26815B58000F8976 /* QueryKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		756551B1268138B5000F8976 /* TopListRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoryType.swift; sourceTree = "<group>"; };
 		756551B5268156E3000F8976 /* HeaderKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
 		756551B726815900000F8976 /* UserSessionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionKey.swift; sourceTree = "<group>"; };
+		756551B926815AE8000F8976 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		756551BB26815B58000F8976 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 				7565519C2681146B000F8976 /* Endpoint.swift */,
 				7565519E268115C9000F8976 /* Request.swift */,
 				756551B5268156E3000F8976 /* HeaderKey.swift */,
+				756551B926815AE8000F8976 /* RequestFactory.swift */,
+				756551BB26815B58000F8976 /* QueryKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			files = (
 				75655168268110AA000F8976 /* ViewController.swift in Sources */,
 				7565519B26811438000F8976 /* HTTPVerb.swift in Sources */,
+				756551BA26815AE8000F8976 /* RequestFactory.swift in Sources */,
 				75655164268110AA000F8976 /* AppDelegate.swift in Sources */,
 				756551B2268138B5000F8976 /* TopListRepositoryType.swift in Sources */,
 				75655166268110AA000F8976 /* SceneDelegate.swift in Sources */,
@@ -354,6 +361,7 @@
 				756551A826811A66000F8976 /* TopListElement.swift in Sources */,
 				756551B826815900000F8976 /* UserSessionKey.swift in Sources */,
 				756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */,
+				756551BC26815B58000F8976 /* QueryKey.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
 				756551982681140C000F8976 /* NetworkDataSource.swift in Sources */,
 				756551B6268156E3000F8976 /* HeaderKey.swift in Sources */,

@@ -8,7 +8,5 @@
 import Foundation
 
 enum HeaderKey: String {
-  case grantType = "grant_type"
-  case refreshToken = "refresh_token"
   case authorization, basic
 }
