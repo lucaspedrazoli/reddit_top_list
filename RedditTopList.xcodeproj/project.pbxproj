@@ -27,6 +27,7 @@
 		756551AD26812C92000F8976 /* UserSessionDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551AC26812C92000F8976 /* UserSessionDataSourceType.swift */; };
 		756551B0268138AB000F8976 /* TopListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551AF268138AB000F8976 /* TopListRepository.swift */; };
 		756551B2268138B5000F8976 /* TopListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551B1268138B5000F8976 /* TopListRepositoryType.swift */; };
+		756551B6268156E3000F8976 /* HeaderKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551B5268156E3000F8976 /* HeaderKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		756551AC26812C92000F8976 /* UserSessionDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataSourceType.swift; sourceTree = "<group>"; };
 		756551AF268138AB000F8976 /* TopListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepository.swift; sourceTree = "<group>"; };
 		756551B1268138B5000F8976 /* TopListRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoryType.swift; sourceTree = "<group>"; };
+		756551B5268156E3000F8976 /* HeaderKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				7565519A26811438000F8976 /* HTTPVerb.swift */,
 				7565519C2681146B000F8976 /* Endpoint.swift */,
 				7565519E268115C9000F8976 /* Request.swift */,
+				756551B5268156E3000F8976 /* HeaderKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
 				756551982681140C000F8976 /* NetworkDataSource.swift in Sources */,
+				756551B6268156E3000F8976 /* HeaderKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

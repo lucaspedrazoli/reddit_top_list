@@ -13,7 +13,7 @@ struct Request {
   var method: HTTPVerb
   var params: Array<URLQueryItem> = []
   var body: [String: Any] = [:]
-  var header: [String: String] = [:]
+  var header: [String: String?] = [:]
 
   init(endpoint: Endpoint, method: HTTPVerb) {
     self.endpoint = endpoint
@@ -24,8 +24,16 @@ struct Request {
     params.append(item)
   }
 
-  mutating func addHeader(_ name: String, _ value: String) {
+  mutating func addHeader(_ name: String, _ value: String?) {
     header[name] = value
+  }
+
+  mutating func addBearerToken(_ token: String?) {
+    header[HeaderKey.authorization.rawValue] = "Bearer \(token ?? "")"
+  }
+
+  mutating func addBasicAuth(_ id: String?) {
+    header[HeaderKey.basic.rawValue] = "Basic \(id ?? "")"
   }
 
   func build() -> URLRequest {
@@ -33,7 +41,7 @@ struct Request {
                                             resolvingAgainstBaseURL: false)!
     urlComponents.queryItems = params
     var urlRequest = URLRequest(url: urlComponents.url!)
-    _ = header.map { urlRequest.addValue($0.value, forHTTPHeaderField: $0.key) }
+    _ = header.map { urlRequest.addValue($0.value ?? "", forHTTPHeaderField: $0.key) }
     urlRequest.httpMethod = method.rawValue
     return urlRequest
   }
