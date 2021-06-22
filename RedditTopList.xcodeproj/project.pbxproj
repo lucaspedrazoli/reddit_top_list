@@ -143,7 +143,6 @@
 				756551C526820C0F000F8976 /* TopList */,
 				75655163268110AA000F8976 /* AppDelegate.swift */,
 				75655165268110AA000F8976 /* SceneDelegate.swift */,
-				75655167268110AA000F8976 /* ViewController.swift */,
 				75655169268110AA000F8976 /* Main.storyboard */,
 				7565516C268110AB000F8976 /* Assets.xcassets */,
 				7565516E268110AB000F8976 /* LaunchScreen.storyboard */,
@@ -228,6 +227,7 @@
 		756551C526820C0F000F8976 /* TopList */ = {
 			isa = PBXGroup;
 			children = (
+				75655167268110AA000F8976 /* ViewController.swift */,
 				756551C626820C9F000F8976 /* TopListViewModel.swift */,
 			);
 			path = TopList;
