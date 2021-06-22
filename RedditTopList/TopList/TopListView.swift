@@ -38,6 +38,11 @@ class TopListView: NiblessView {
     tableView.register(cell, forCellReuseIdentifier: identifier)
   }
 
+  func setDelegate(_ delegate: UITableViewDelegate & UITableViewDataSource) {
+    tableView.delegate = delegate
+    tableView.dataSource = delegate
+  }
+
   override func addSubviews() {
     self.addSubview(container)
     container.addSubview(tableView)

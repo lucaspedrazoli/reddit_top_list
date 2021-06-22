@@ -46,8 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   private func setupUI() {
     topListView.inflate(with: view.frame)
     view = topListView
-    topListView.tableView.delegate = self
-    topListView.tableView.dataSource = self
+    topListView.setDelegate(self)
     topListView.registerCell(TopListCell.self,
                              identifier: TopListCell.identifier)
   }
