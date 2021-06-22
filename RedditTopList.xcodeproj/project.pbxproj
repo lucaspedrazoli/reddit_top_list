@@ -34,6 +34,7 @@
 		756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C126815EA4000F8976 /* UserSessionEntity.swift */; };
 		756551C42682092B000F8976 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C32682092B000F8976 /* Environment.swift */; };
 		756551C726820C9F000F8976 /* TopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C626820C9F000F8976 /* TopListViewModel.swift */; };
+		756551C9268212CC000F8976 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C8268212CC000F8976 /* DependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		756551C126815EA4000F8976 /* UserSessionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionEntity.swift; sourceTree = "<group>"; };
 		756551C32682092B000F8976 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		756551C626820C9F000F8976 /* TopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewModel.swift; sourceTree = "<group>"; };
+		756551C8268212CC000F8976 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			children = (
 				75655167268110AA000F8976 /* ViewController.swift */,
 				756551C626820C9F000F8976 /* TopListViewModel.swift */,
+				756551C8268212CC000F8976 /* DependencyContainer.swift */,
 			);
 			path = TopList;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				756551A826811A66000F8976 /* TopListElement.swift in Sources */,
 				756551B826815900000F8976 /* UserSessionKey.swift in Sources */,
 				756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */,
+				756551C9268212CC000F8976 /* DependencyContainer.swift in Sources */,
 				756551BC26815B58000F8976 /* QueryKey.swift in Sources */,
 				756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
