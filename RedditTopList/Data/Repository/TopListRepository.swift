@@ -28,4 +28,15 @@ struct TopListRepository: TopListRepositoryType {
       completion(model)
     })
   }
+
+  func paginate(lastItemId: String, itemsCount: Int, _ completion: @escaping (TopList?) -> Void) {
+    var request = requestFactory.createPaginateTopList()
+    let token: String? = userSession.read(for: .accessToken)
+    request.addQueryItem(.after, value: lastItemId)
+    request.addQueryItem(.count, value: "\(itemsCount)")
+    request.addBearerToken(token)
+    network.doRequest(request, completion: { (model: TopList?) in
+      completion(model)
+    })
+  }
 }

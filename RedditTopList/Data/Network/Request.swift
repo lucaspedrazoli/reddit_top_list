@@ -20,8 +20,9 @@ struct Request {
     self.method = method
   }
 
-  mutating func addQueryItem(_ item: URLQueryItem) {
-    params.append(item)
+  mutating func addQueryItem(_ key: QueryKey, value: String?) {
+    let queryItem = URLQueryItem(name: key.rawValue, value: value)
+    params.append(queryItem)
   }
 
   mutating func addHeader(_ name: String, _ value: String?) {

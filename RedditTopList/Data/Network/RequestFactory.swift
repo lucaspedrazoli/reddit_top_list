@@ -15,8 +15,13 @@ struct RequestFactory {
 
   func createRefreshToken() -> Request {
     var request = Request(endpoint: .refreshToken, method: .POST)
-    let grantType = URLQueryItem(name: QueryKey.grantType.rawValue, value: "refresh_token")
-    request.addQueryItem(grantType)
+    request.addQueryItem(.grantType, value: "refresh_token")
+    return request
+  }
+
+  func createPaginateTopList() -> Request {
+    var request = Request(endpoint: .topList, method: .GET)
+    request.addQueryItem(.limit, value: "10")
     return request
   }
 }

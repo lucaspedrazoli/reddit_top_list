@@ -14,6 +14,7 @@ struct TopList: Codable {
 extension TopList {
   struct ListData: Codable {
     let children: [ListElementData]
+    let after: String
   }
 
   struct ListElementData: Codable {

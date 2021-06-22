@@ -10,4 +10,5 @@ import Foundation
 enum QueryKey: String {
   case grantType = "grant_type"
   case refreshToken = "refresh_token"
+  case after, count, limit
 }

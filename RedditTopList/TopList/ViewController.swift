@@ -29,8 +29,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     return cell
   }
 
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    viewModel.handlePagination(itemsCount: items.count,
+                               currentRow: indexPath.row) { [weak self] list in
+      self?.onPaginate(list)
+    }
+  }
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 200
+  }
+
+  func onPaginate(_ newItems: [TopListElement]) {
+    print(newItems)
   }
 
   @objc func loadData() {
