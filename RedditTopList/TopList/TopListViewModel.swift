@@ -11,6 +11,7 @@ class TopListViewModel {
 
   let topListRepository: TopListRepositoryType
   private var lastItemId: String?
+  private var isPaginating = false
 
   init(topListRepository: TopListRepositoryType) {
     self.topListRepository = topListRepository
@@ -29,12 +30,15 @@ class TopListViewModel {
                         currentRow: Int,
                         _ completion: @escaping ([TopListElement]) -> Void) {
     guard let id = lastItemId,
+          !isPaginating,
           isLastRow(totalRows: itemsCount, currentRow: currentRow) else { return }
+    isPaginating = true
     topListRepository.paginate(lastItemId: id, itemsCount: itemsCount) { [weak self] element in
       guard let self = self else { return }
       self.lastItemId = element?.data.after
       let newList = element?.data.children.map { $0.data }
       completion(newList ?? [])
+      self.isPaginating = false
     }
   }
 
