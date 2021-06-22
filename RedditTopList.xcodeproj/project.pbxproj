@@ -36,6 +36,7 @@
 		756551C726820C9F000F8976 /* TopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C626820C9F000F8976 /* TopListViewModel.swift */; };
 		756551C9268212CC000F8976 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C8268212CC000F8976 /* DependencyContainer.swift */; };
 		756551CD26822056000F8976 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551CC26822056000F8976 /* NiblessView.swift */; };
+		756551CF268220C6000F8976 /* TopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551CE268220C6000F8976 /* TopListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		756551C626820C9F000F8976 /* TopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewModel.swift; sourceTree = "<group>"; };
 		756551C8268212CC000F8976 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		756551CC26822056000F8976 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		756551CE268220C6000F8976 /* TopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				75655167268110AA000F8976 /* ViewController.swift */,
 				756551C626820C9F000F8976 /* TopListViewModel.swift */,
 				756551C8268212CC000F8976 /* DependencyContainer.swift */,
+				756551CE268220C6000F8976 /* TopListView.swift */,
 			);
 			path = TopList;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
 				756551982681140C000F8976 /* NetworkDataSource.swift in Sources */,
+				756551CF268220C6000F8976 /* TopListView.swift in Sources */,
 				756551B6268156E3000F8976 /* HeaderKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
