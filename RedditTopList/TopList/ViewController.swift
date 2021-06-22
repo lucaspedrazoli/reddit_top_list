@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
   var viewModel: TopListViewModel!
+  var topListView: TopListView!
 
   override func viewDidLoad() {
     super.viewDidLoad()

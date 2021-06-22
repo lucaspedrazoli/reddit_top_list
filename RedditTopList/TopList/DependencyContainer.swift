@@ -6,16 +6,22 @@
 //
 
 import Foundation
+import UIKit
 
 struct DependencyContainer {
   let networkDataSource = NetworkDataSource()
   let userSessionDataSource = UserSessionDataSource()
   let requestFactory = RequestFactory()
 
-  func makeTopListViewModel() -> TopListViewModel {
+  func makeTopListViewController() -> ViewController {
     let topListRepository = TopListRepository(network: networkDataSource,
                                               userSession: userSessionDataSource,
                                               requestFactory: requestFactory)
-    return TopListViewModel(topListRepository: topListRepository)
+    let viewModel = TopListViewModel(topListRepository: topListRepository)
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+    viewController.viewModel = viewModel
+    viewController.topListView = TopListView()
+    return viewController
   }
 }

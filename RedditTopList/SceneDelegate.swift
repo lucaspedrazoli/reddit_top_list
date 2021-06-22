@@ -15,10 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     let dependencyContainer = DependencyContainer()
     window = UIWindow(windowScene: windowScene)
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let initialViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-    initialViewController?.viewModel = dependencyContainer.makeTopListViewModel()
-    window?.rootViewController = initialViewController
+    window?.rootViewController = dependencyContainer.makeTopListViewController()
     window?.makeKeyAndVisible()
   }
 
