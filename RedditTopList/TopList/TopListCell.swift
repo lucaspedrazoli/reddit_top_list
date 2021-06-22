@@ -16,6 +16,7 @@ class TopListCell: UITableViewCell {
     view.layer.borderWidth = 2.0
     view.layer.borderColor = UIColor.black.cgColor
     view.layer.cornerRadius = 8.0
+    view.backgroundColor = .blue
     return view
   }()
 
@@ -24,6 +25,15 @@ class TopListCell: UITableViewCell {
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
+
+  static func dequeue(for tableview: UITableView,
+                      at indexPath: IndexPath,
+                      from item: TopListElement) -> UITableViewCell {
+    let cell = tableview.dequeueReusableCell(withIdentifier: TopListCell.identifier, for: indexPath)
+    guard let topListCell = cell as? TopListCell else { return cell }
+    topListCell.inflate(with: item.title)
+    return cell
+  }
 
   func inflate(with text: String) {
     titleLabel.text = text

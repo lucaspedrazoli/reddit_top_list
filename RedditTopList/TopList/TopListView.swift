@@ -28,7 +28,7 @@ class TopListView: NiblessView {
   lazy var tableView: UITableView = {
     let tableView = UITableView()
     tableView.translatesAutoresizingMaskIntoConstraints = false
-    tableView.backgroundColor = .green
+    tableView.backgroundColor = .clear
     tableView.rowHeight = UITableView.automaticDimension
     tableView.separatorStyle = .none
     return tableView

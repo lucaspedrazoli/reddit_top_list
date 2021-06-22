@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    loadData()
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,19 +24,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    let item = items[indexPath.row]
+    let cell = TopListCell.dequeue(for: topListView.tableView, at: indexPath, from: item)
+    return cell
+  }
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 200
   }
 
   private func loadData() {
     viewModel.load {
       self.items = $0
-      self.topListView.tableView.reloadData()
+      print($0)
+      DispatchQueue.main.async {
+        self.topListView.tableView.reloadData()
+      }
     }
   }
 
   private func setupUI() {
     topListView.inflate(with: view.frame)
     view = topListView
+    topListView.tableView.delegate = self
+    topListView.tableView.dataSource = self
     topListView.registerCell(TopListCell.self,
                              identifier: TopListCell.identifier)
   }
