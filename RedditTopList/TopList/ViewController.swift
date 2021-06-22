@@ -13,6 +13,13 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel.load {
+      print($0.first?.title ?? "")
+    }
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     view.backgroundColor = .yellow
   }
 }
