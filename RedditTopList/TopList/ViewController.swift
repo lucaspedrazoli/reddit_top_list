@@ -14,14 +14,11 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    topListView.inflate(with: view.frame)
+    view = topListView
     viewModel.load {
       print($0.first?.title ?? "")
     }
-  }
-
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    view.backgroundColor = .yellow
   }
 }
 
