@@ -33,6 +33,7 @@
 		756551BC26815B58000F8976 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551BB26815B58000F8976 /* QueryKey.swift */; };
 		756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C126815EA4000F8976 /* UserSessionEntity.swift */; };
 		756551C42682092B000F8976 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C32682092B000F8976 /* Environment.swift */; };
+		756551C726820C9F000F8976 /* TopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C626820C9F000F8976 /* TopListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		756551BB26815B58000F8976 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
 		756551C126815EA4000F8976 /* UserSessionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionEntity.swift; sourceTree = "<group>"; };
 		756551C32682092B000F8976 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		756551C626820C9F000F8976 /* TopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				756551C32682092B000F8976 /* Environment.swift */,
 				75655196268113F8000F8976 /* Data */,
+				756551C526820C0F000F8976 /* TopList */,
 				75655163268110AA000F8976 /* AppDelegate.swift */,
 				75655165268110AA000F8976 /* SceneDelegate.swift */,
 				75655167268110AA000F8976 /* ViewController.swift */,
@@ -220,6 +223,14 @@
 				756551B1268138B5000F8976 /* TopListRepositoryType.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		756551C526820C0F000F8976 /* TopList */ = {
+			isa = PBXGroup;
+			children = (
+				756551C626820C9F000F8976 /* TopListViewModel.swift */,
+			);
+			path = TopList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 				756551BA26815AE8000F8976 /* RequestFactory.swift in Sources */,
 				75655164268110AA000F8976 /* AppDelegate.swift in Sources */,
 				756551B2268138B5000F8976 /* TopListRepositoryType.swift in Sources */,
+				756551C726820C9F000F8976 /* TopListViewModel.swift in Sources */,
 				75655166268110AA000F8976 /* SceneDelegate.swift in Sources */,
 				7565519F268115C9000F8976 /* Request.swift in Sources */,
 				756551A62681193A000F8976 /* TopList.swift in Sources */,
