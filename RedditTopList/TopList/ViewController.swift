@@ -33,12 +33,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     return 200
   }
 
-  private func loadData() {
+  @objc func loadData() {
     viewModel.load {
       self.items = $0
       print($0)
       DispatchQueue.main.async {
-        self.topListView.tableView.reloadData()
+        self.topListView.reload()
       }
     }
   }
@@ -46,6 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   private func setupUI() {
     topListView.inflate(with: view.frame)
     view = topListView
+    topListView.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
     topListView.setDelegate(self)
     topListView.registerCell(TopListCell.self,
                              identifier: TopListCell.identifier)

@@ -17,11 +17,9 @@ class TopListView: NiblessView {
     return view
   }()
 
-  lazy var spinner: UIActivityIndicatorView = {
-    let spinner = UIActivityIndicatorView(style: .large)
-    spinner.color = .black
-    spinner.translatesAutoresizingMaskIntoConstraints = false
-    spinner.isHidden = true
+  lazy var refreshControl: UIRefreshControl = {
+    let spinner = UIRefreshControl()
+    spinner.attributedTitle = NSAttributedString(string: "Pull to refresh")
     return spinner
   }()
 
@@ -43,10 +41,15 @@ class TopListView: NiblessView {
     tableView.dataSource = delegate
   }
 
+  func reload() {
+    tableView.reloadData()
+    refreshControl.endRefreshing()
+  }
+
   override func addSubviews() {
+    tableView.addSubview(refreshControl)
     self.addSubview(container)
     container.addSubview(tableView)
-    container.addSubview(spinner)
   }
 
   override func installConstraints() {
@@ -62,20 +65,6 @@ class TopListView: NiblessView {
       tableView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
       tableView.trailingAnchor.constraint(equalTo: container.trailingAnchor)
     ]
-    constraints += [
-      spinner.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
-      spinner.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
-    ]
     NSLayoutConstraint.activate(constraints)
-  }
-
-  func showLoading() {
-    spinner.startAnimating()
-    spinner.isHidden = false
-  }
-
-  func hideLoading() {
-    spinner.stopAnimating()
-    spinner.isHidden = true
   }
 }
