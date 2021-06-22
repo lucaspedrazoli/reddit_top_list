@@ -14,11 +14,17 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    topListView.inflate(with: view.frame)
-    view = topListView
+    setupUI()
     viewModel.load {
       print($0.first?.title ?? "")
     }
+  }
+
+  private func setupUI() {
+    topListView.inflate(with: view.frame)
+    view = topListView
+    topListView.registerCell(TopListCell.self,
+                             identifier: TopListCell.identifier)
   }
 }
 

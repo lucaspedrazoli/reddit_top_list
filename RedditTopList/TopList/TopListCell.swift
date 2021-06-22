@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PhotoListCell: UITableViewCell {
+class TopListCell: UITableViewCell {
 
   lazy var container: UIView = {
     let view = UIView()
