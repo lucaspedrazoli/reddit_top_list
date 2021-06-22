@@ -32,7 +32,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     viewModel.handlePagination(itemsCount: items.count,
                                currentRow: indexPath.row) { [weak self] list in
-      self?.onPaginate(list)
+      DispatchQueue.main.async {
+        self?.onPaginate(list)
+      }
     }
   }
 
@@ -41,7 +43,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
 
   func onPaginate(_ newItems: [TopListElement]) {
-    print(newItems)
+    let newRows = IndexPath.createRows(newItems.count, startingAt: items.count)
+    topListView.tableView.beginUpdates()
+    items.append(contentsOf: newItems)
+    topListView.tableView.insertRows(at: newRows, with: .top)
+    topListView.tableView.endUpdates()
   }
 
   @objc func loadData() {
