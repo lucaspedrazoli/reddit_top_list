@@ -35,6 +35,7 @@
 		756551C42682092B000F8976 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C32682092B000F8976 /* Environment.swift */; };
 		756551C726820C9F000F8976 /* TopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C626820C9F000F8976 /* TopListViewModel.swift */; };
 		756551C9268212CC000F8976 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551C8268212CC000F8976 /* DependencyContainer.swift */; };
+		756551CD26822056000F8976 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756551CC26822056000F8976 /* NiblessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		756551C32682092B000F8976 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		756551C626820C9F000F8976 /* TopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewModel.swift; sourceTree = "<group>"; };
 		756551C8268212CC000F8976 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		756551CC26822056000F8976 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				756551C32682092B000F8976 /* Environment.swift */,
+				756551CA26822044000F8976 /* Application */,
 				75655196268113F8000F8976 /* Data */,
 				756551C526820C0F000F8976 /* TopList */,
 				75655163268110AA000F8976 /* AppDelegate.swift */,
@@ -234,6 +237,22 @@
 				756551C8268212CC000F8976 /* DependencyContainer.swift */,
 			);
 			path = TopList;
+			sourceTree = "<group>";
+		};
+		756551CA26822044000F8976 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				756551CB2682204B000F8976 /* UI */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		756551CB2682204B000F8976 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				756551CC26822056000F8976 /* NiblessView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75655168268110AA000F8976 /* ViewController.swift in Sources */,
+				756551CD26822056000F8976 /* NiblessView.swift in Sources */,
 				7565519B26811438000F8976 /* HTTPVerb.swift in Sources */,
 				756551BA26815AE8000F8976 /* RequestFactory.swift in Sources */,
 				75655164268110AA000F8976 /* AppDelegate.swift in Sources */,
