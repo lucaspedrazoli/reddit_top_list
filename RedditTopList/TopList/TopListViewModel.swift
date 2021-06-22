@@ -15,9 +15,10 @@ class TopListViewModel {
     self.topListRepository = topListRepository
   }
 
-  func load(_ completion: @escaping (TopList?) -> Void) {
-    topListRepository.getList {
-      completion($0)
+  func load(_ completion: @escaping ([TopListElement]) -> Void) {
+    topListRepository.getList { element in
+      let newList = element?.data.children.map { $0.data }
+      completion(newList ?? [])
     }
   }
 }
