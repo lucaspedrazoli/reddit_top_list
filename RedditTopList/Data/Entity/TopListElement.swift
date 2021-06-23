@@ -16,5 +16,6 @@ struct TopListElement: Codable {
   let num_comments: Int
   let clicked: Bool
   let visited: Bool
+  let url: String
 }
 

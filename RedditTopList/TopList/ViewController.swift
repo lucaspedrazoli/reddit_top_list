@@ -38,6 +38,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let item = items[indexPath.row]
+    guard let url = URL(string: item.url) else { return }
+    UIApplication.shared.open(url)
+  }
+
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       items.remove(at: indexPath.row)
