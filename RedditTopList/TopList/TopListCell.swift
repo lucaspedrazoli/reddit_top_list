@@ -22,6 +22,7 @@ class TopListCell: UITableViewCell {
 
   lazy var titleLabel: UILabel = {
     let label = UILabel()
+    label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -36,7 +37,7 @@ class TopListCell: UITableViewCell {
   }
 
   func inflate(with item: TopListElement) {
-    titleLabel.text = item.title
+    titleLabel.text = "\(item.title) read: \(item.read)"
     addSubviews()
     installConstraints()
   }

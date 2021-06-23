@@ -41,6 +41,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let item = items[indexPath.row]
     guard let url = URL(string: item.url) else { return }
+    items[indexPath.row].read = true
+    topListView.reloadCell(at: indexPath)
     UIApplication.shared.open(url)
     if let data = try? Data(contentsOf: url),
        let image = UIImage(data: data) {
