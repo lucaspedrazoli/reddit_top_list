@@ -40,6 +40,7 @@
 		759CFA1E268226CA0023E7FA /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA1D268226CA0023E7FA /* UITableViewCell.swift */; };
 		759CFA202682273D0023E7FA /* TopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA1F2682273D0023E7FA /* TopListCell.swift */; };
 		759CFA2226828BD00023E7FA /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA2126828BD00023E7FA /* IndexPath.swift */; };
+		759CFA242683B5440023E7FA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA232683B5440023E7FA /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		759CFA1D268226CA0023E7FA /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		759CFA1F2682273D0023E7FA /* TopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCell.swift; sourceTree = "<group>"; };
 		759CFA2126828BD00023E7FA /* IndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
+		759CFA232683B5440023E7FA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			children = (
 				759CFA1D268226CA0023E7FA /* UITableViewCell.swift */,
 				759CFA2126828BD00023E7FA /* IndexPath.swift */,
+				759CFA232683B5440023E7FA /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				756551C226815EA4000F8976 /* UserSessionEntity.swift in Sources */,
 				7565519D2681146B000F8976 /* Endpoint.swift in Sources */,
 				759CFA2226828BD00023E7FA /* IndexPath.swift in Sources */,
+				759CFA242683B5440023E7FA /* Date.swift in Sources */,
 				756551982681140C000F8976 /* NetworkDataSource.swift in Sources */,
 				759CFA202682273D0023E7FA /* TopListCell.swift in Sources */,
 				756551CF268220C6000F8976 /* TopListView.swift in Sources */,

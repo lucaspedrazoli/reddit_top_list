@@ -37,7 +37,8 @@ class TopListCell: UITableViewCell {
   }
 
   func inflate(with item: TopListElement) {
-    titleLabel.text = "\(item.title) read: \(item.read)"
+    let time = Date.elapsedTime(timestamp: item.createdAt)
+    titleLabel.text = "\(item.title) created_at: \(time)"
     addSubviews()
     installConstraints()
   }
