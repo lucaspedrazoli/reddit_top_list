@@ -10,6 +10,10 @@ import UIKit
 
 class TopListCell: UITableViewCell {
 
+  var item: TopListElement?
+  var indexPath: IndexPath?
+  var reloadDelegate: ReloadCellDelegate?
+
   lazy var container: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -65,16 +69,21 @@ class TopListCell: UITableViewCell {
     imageView.layer.cornerRadius = 16.0
     imageView.clipsToBounds = true
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+    imageView.isUserInteractionEnabled = true
+    imageView.addGestureRecognizer(tapGestureRecognizer)
     return imageView
   }()
 
   static func dequeue(for tableview: UITableView,
                       at indexPath: IndexPath,
-                      from item: TopListElement) -> UITableViewCell {
+                      from item: TopListElement) -> TopListCell? {
     let cell = tableview.dequeueReusableCell(withIdentifier: TopListCell.identifier, for: indexPath)
-    guard let topListCell = cell as? TopListCell else { return cell }
+    guard let topListCell = cell as? TopListCell else { return nil }
     topListCell.inflate(with: item)
-    return cell
+    topListCell.item = item
+    topListCell.indexPath = indexPath
+    return topListCell
   }
 
   func inflate(with item: TopListElement) {
@@ -86,6 +95,20 @@ class TopListCell: UITableViewCell {
     titleLabel.text = "title: \(item.title)"
     addSubviews()
     installConstraints()
+  }
+
+  @objc func imageTapped() {
+    guard let item = item,
+          let url = URL(string: item.url) else { return }
+    DispatchQueue.global(qos: .background).async {
+      if let data = try? Data(contentsOf: url),
+         let image = UIImage(data: data) {
+          UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        DispatchQueue.main.async {
+          UIApplication.shared.open(url)
+        }
+      }
+    }
   }
 
   private func addSubviews() {

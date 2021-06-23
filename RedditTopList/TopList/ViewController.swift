@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ReloadCellDelegate {
 
   var viewModel: TopListViewModel!
   var topListView: TopListView!
@@ -25,7 +25,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let item = items[indexPath.row]
-    let cell = TopListCell.dequeue(for: topListView.tableView, at: indexPath, from: item)
+    guard let cell = TopListCell.dequeue(for: topListView.tableView, at: indexPath, from: item) else { return UITableViewCell() }
+    cell.reloadDelegate = self
     return cell
   }
 
@@ -39,15 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let item = items[indexPath.row]
-    guard let url = URL(string: item.url) else { return }
-    items[indexPath.row].read = true
-    topListView.reloadCell(at: indexPath)
-    UIApplication.shared.open(url)
-    if let data = try? Data(contentsOf: url),
-       let image = UIImage(data: data) {
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
+    // select detail delegate
   }
 
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -67,6 +60,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     items.append(contentsOf: newItems)
     topListView.tableView.insertRows(at: newRows, with: .top)
     topListView.tableView.endUpdates()
+  }
+
+  func reloadCell(at indexPath: IndexPath) {
+    items[indexPath.row].read = true
+    topListView.reloadCell(at: indexPath)
   }
 
   @objc func loadData() {
