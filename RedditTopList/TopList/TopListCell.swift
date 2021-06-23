@@ -31,12 +31,12 @@ class TopListCell: UITableViewCell {
                       from item: TopListElement) -> UITableViewCell {
     let cell = tableview.dequeueReusableCell(withIdentifier: TopListCell.identifier, for: indexPath)
     guard let topListCell = cell as? TopListCell else { return cell }
-    topListCell.inflate(with: item.title)
+    topListCell.inflate(with: item)
     return cell
   }
 
-  func inflate(with text: String) {
-    titleLabel.text = text
+  func inflate(with item: TopListElement) {
+    titleLabel.text = item.title
     addSubviews()
     installConstraints()
   }
