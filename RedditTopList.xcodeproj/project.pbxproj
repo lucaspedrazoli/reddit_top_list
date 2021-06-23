@@ -41,6 +41,7 @@
 		759CFA202682273D0023E7FA /* TopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA1F2682273D0023E7FA /* TopListCell.swift */; };
 		759CFA2226828BD00023E7FA /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA2126828BD00023E7FA /* IndexPath.swift */; };
 		759CFA242683B5440023E7FA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA232683B5440023E7FA /* Date.swift */; };
+		759CFA282683B7670023E7FA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA272683B7660023E7FA /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		759CFA1F2682273D0023E7FA /* TopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCell.swift; sourceTree = "<group>"; };
 		759CFA2126828BD00023E7FA /* IndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		759CFA232683B5440023E7FA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		759CFA272683B7660023E7FA /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 				759CFA1D268226CA0023E7FA /* UITableViewCell.swift */,
 				759CFA2126828BD00023E7FA /* IndexPath.swift */,
 				759CFA232683B5440023E7FA /* Date.swift */,
+				759CFA272683B7660023E7FA /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				756551AB26812A58000F8976 /* UserSessionDataSource.swift in Sources */,
 				756551B0268138AB000F8976 /* TopListRepository.swift in Sources */,
 				756551A826811A66000F8976 /* TopListElement.swift in Sources */,
+				759CFA282683B7670023E7FA /* UIImageView.swift in Sources */,
 				756551B826815900000F8976 /* UserSessionKey.swift in Sources */,
 				756551A126811644000F8976 /* NetworkDataSourceType.swift in Sources */,
 				756551C9268212CC000F8976 /* DependencyContainer.swift in Sources */,
