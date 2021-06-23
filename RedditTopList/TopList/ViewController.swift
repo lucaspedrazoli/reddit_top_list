@@ -68,8 +68,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
 
   @objc func loadData() {
-    viewModel.load {
-      self.items = $0
+    viewModel.load { [weak self] list in
+      guard let self = self else { return }
+      self.items = list
       DispatchQueue.main.async {
         self.topListView.reload()
       }
