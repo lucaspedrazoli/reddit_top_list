@@ -27,6 +27,42 @@ class TopListCell: UITableViewCell {
     return label
   }()
 
+  lazy var authorLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+
+  lazy var entryDataLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+
+  lazy var commentsLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+
+  lazy var statusLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+
+  lazy var thumbnail: UIImageView = {
+    let imageView = UIImageView()
+    imageView.layer.cornerRadius = 16.0
+    imageView.clipsToBounds = true
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    return imageView
+  }()
+
   static func dequeue(for tableview: UITableView,
                       at indexPath: IndexPath,
                       from item: TopListElement) -> UITableViewCell {
