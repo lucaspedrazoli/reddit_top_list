@@ -16,13 +16,14 @@ class TopListCell: UITableViewCell {
     view.layer.borderWidth = 2.0
     view.layer.borderColor = UIColor.black.cgColor
     view.layer.cornerRadius = 8.0
-    view.backgroundColor = .blue
+    view.backgroundColor = .gray
     return view
   }()
 
   lazy var titleLabel: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
+    label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -30,6 +31,7 @@ class TopListCell: UITableViewCell {
   lazy var authorLabel: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
+    label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -37,12 +39,14 @@ class TopListCell: UITableViewCell {
   lazy var entryDateLabel: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
+    label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
 
   lazy var commentsLabel: UILabel = {
     let label = UILabel()
+    label.textAlignment = .center
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -50,6 +54,7 @@ class TopListCell: UITableViewCell {
 
   lazy var statusLabel: UILabel = {
     let label = UILabel()
+    label.textAlignment = .center
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -73,18 +78,23 @@ class TopListCell: UITableViewCell {
   }
 
   func inflate(with item: TopListElement) {
-    titleLabel.text = item.title
-    authorLabel.text = item.author
+    authorLabel.text = "author: \(item.author)"
     entryDateLabel.text = Date.elapsedTime(timestamp: item.createdAt)
     thumbnail.load(url: item.thumbnail)
-    commentsLabel.text = "\(item.commentsCount)"
+    commentsLabel.text = "comments: \(item.commentsCount)"
     statusLabel.text = "status: \(item.status())"
+    titleLabel.text = "title: \(item.title)"
     addSubviews()
     installConstraints()
   }
 
   private func addSubviews() {
     contentView.addSubview(container)
+    container.addSubview(authorLabel)
+    container.addSubview(entryDateLabel)
+    container.addSubview(thumbnail)
+    container.addSubview(commentsLabel)
+    container.addSubview(statusLabel)
     container.addSubview(titleLabel)
   }
 
@@ -97,10 +107,33 @@ class TopListCell: UITableViewCell {
       container.trailingAnchor.constraint(equalTo: margin.trailingAnchor),
     ]
     constraints += [
-      titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+      authorLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
+      authorLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      authorLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
+      authorLabel.bottomAnchor.constraint(equalTo: entryDateLabel.topAnchor),
+    ]
+    constraints += [
+      entryDateLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      entryDateLabel.bottomAnchor.constraint(equalTo: thumbnail.topAnchor, constant: -10)
+    ]
+    constraints += [
+      thumbnail.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      thumbnail.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.25),
+      thumbnail.heightAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.25),
+      thumbnail.bottomAnchor.constraint(equalTo: commentsLabel.topAnchor, constant: -10)
+    ]
+    constraints += [
+      commentsLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      commentsLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor)
+    ]
+    constraints += [
+      statusLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      statusLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor)
+    ]
+    constraints += [
       titleLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
-      titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
-      titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10),
+      titleLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
     ]
     NSLayoutConstraint.activate(constraints)
   }
