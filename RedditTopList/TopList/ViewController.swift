@@ -42,6 +42,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let item = items[indexPath.row]
     guard let url = URL(string: item.url) else { return }
     UIApplication.shared.open(url)
+    if let data = try? Data(contentsOf: url),
+       let image = UIImage(data: data) {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
   }
 
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
