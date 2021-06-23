@@ -32,5 +32,9 @@ struct TopListElement: Codable {
     url = try data.decode(String.self, forKey: .url)
     read = false
   }
+
+  func status() -> String {
+    read == true ? "read" : "unread"
+  }
 }
 

@@ -34,7 +34,7 @@ class TopListCell: UITableViewCell {
     return label
   }()
 
-  lazy var entryDataLabel: UILabel = {
+  lazy var entryDateLabel: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -73,8 +73,12 @@ class TopListCell: UITableViewCell {
   }
 
   func inflate(with item: TopListElement) {
-    let time = Date.elapsedTime(timestamp: item.createdAt)
-    titleLabel.text = "\(item.title) created_at: \(time)"
+    titleLabel.text = item.title
+    authorLabel.text = item.author
+    entryDateLabel.text = Date.elapsedTime(timestamp: item.createdAt)
+    thumbnail.load(url: item.thumbnail)
+    commentsLabel.text = "\(item.commentsCount)"
+    statusLabel.text = "status: \(item.status())"
     addSubviews()
     installConstraints()
   }
