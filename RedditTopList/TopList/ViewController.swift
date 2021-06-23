@@ -60,11 +60,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   @objc func loadData() {
     viewModel.load {
       self.items = $0
-      print($0)
       DispatchQueue.main.async {
         self.topListView.reload()
       }
     }
+  }
+
+  @objc func clear() {
+    let count = items.count
+    items.removeAll()
+    topListView.clear(itemsCount: count)
   }
 
   private func setupUI() {
@@ -74,6 +79,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     topListView.setDelegate(self)
     topListView.registerCell(TopListCell.self,
                              identifier: TopListCell.identifier)
+    navigationItem
+      .rightBarButtonItem = UIBarButtonItem(title: "Clear",
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(clear))
   }
 }
 

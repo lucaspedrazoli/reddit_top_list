@@ -50,6 +50,11 @@ class TopListView: NiblessView {
     tableView.deleteRows(at: [indexPath], with: .automatic)
   }
 
+  func clear(itemsCount: Int) {
+    let rows = IndexPath.createRows(itemsCount, startingAt: 0)
+    tableView.deleteRows(at: rows, with: .automatic)
+  }
+
   override func addSubviews() {
     tableView.addSubview(refreshControl)
     self.addSubview(container)
