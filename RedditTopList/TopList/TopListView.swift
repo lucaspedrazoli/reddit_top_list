@@ -46,6 +46,10 @@ class TopListView: NiblessView {
     refreshControl.endRefreshing()
   }
 
+  func deleteCell(at indexPath: IndexPath) {
+    tableView.deleteRows(at: [indexPath], with: .automatic)
+  }
+
   override func addSubviews() {
     tableView.addSubview(refreshControl)
     self.addSubview(container)

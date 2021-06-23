@@ -38,6 +38,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
   }
 
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      items.remove(at: indexPath.row)
+      topListView.deleteCell(at: indexPath)
+    }
+  }
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 200
   }
