@@ -72,6 +72,9 @@ class DetailViewController: NiblessViewController, SplitControllerlegate {
     imageView.layer.cornerRadius = 16.0
     imageView.clipsToBounds = true
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+    imageView.isUserInteractionEnabled = true
+    imageView.addGestureRecognizer(tapGestureRecognizer)
     return imageView
   }()
 
@@ -83,12 +86,37 @@ class DetailViewController: NiblessViewController, SplitControllerlegate {
 
   func showDetailItem(_ item: TopListElement?) {
     guard let item = item else { return }
+    self.item = item
     authorLabel.text = "author: \(item.author)"
     entryDateLabel.text = Date.elapsedTime(timestamp: item.createdAt)
     thumbnail.load(url: item.thumbnail)
     commentsLabel.text = "comments: \(item.commentsCount)"
     statusLabel.text = "status: \(item.status())"
     titleLabel.text = "title: \(item.title)"
+  }
+
+  @objc func imageTapped() {
+    guard let item = item,
+          let url = URL(string: item.url),
+          item.isImage() else {
+      shake()
+      return
+    }
+    UIApplication.shared.open(url)
+    DispatchQueue.global(qos: .background).async {
+      if let data = try? Data(contentsOf: url),
+         let image = UIImage(data: data) {
+          UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+      }
+    }
+  }
+
+  func shake() {
+    let shake = CASpringAnimation(keyPath: "position.x")
+    shake.fromValue = thumbnail.layer.position.x + 5.0
+    shake.toValue = thumbnail.layer.position.x
+    shake.duration = shake.settlingDuration
+    thumbnail.layer.add(shake, forKey: nil)
   }
 
   private func addSubviews() {
