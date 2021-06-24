@@ -26,11 +26,14 @@ struct DependencyContainer {
   }
 
   private func makeSplitViewController() -> UISplitViewController {
-    let splitViewController = UISplitViewController()
-    let listNavigationController = UINavigationController(rootViewController: makeTopListViewController())
+    let splitViewController = UISplitViewController(style: .doubleColumn)
     let detailViewController = DetailViewController()
+    let listViewController = makeTopListViewController()
+    listViewController.splitControllerDelegate = detailViewController
+    let listNavigationController = UINavigationController(rootViewController: listViewController)
     let detailNavigationController = UINavigationController(rootViewController: detailViewController)
-    splitViewController.viewControllers = [listNavigationController, detailNavigationController]
+    splitViewController.setViewController(listNavigationController, for: .primary)
+    splitViewController.setViewController(detailNavigationController, for: .secondary)
     return splitViewController
   }
 
