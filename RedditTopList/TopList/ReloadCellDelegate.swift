@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol ReloadCellDelegate: class {
+protocol ReloadCellDelegate: AnyObject {
   func reloadCell(at indexPath: IndexPath)
 }

@@ -5,6 +5,6 @@
 //  Created by Lucas Pedrazoli on 23/06/21.
 //
 
-protocol SplitControllerlegate: class {
+protocol SplitControllerlegate: AnyObject {
   func showDetailItem(_ item: TopListElement?)
 }
