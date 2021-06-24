@@ -42,7 +42,6 @@ class TopListCell: UITableViewCell {
 
   lazy var entryDateLabel: UILabel = {
     let label = UILabel()
-    label.numberOfLines = 0
     label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -51,7 +50,6 @@ class TopListCell: UITableViewCell {
   lazy var commentsLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
-    label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -59,7 +57,6 @@ class TopListCell: UITableViewCell {
   lazy var statusLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
-    label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -146,6 +143,7 @@ class TopListCell: UITableViewCell {
       authorLabel.bottomAnchor.constraint(equalTo: entryDateLabel.topAnchor),
     ]
     constraints += [
+      entryDateLabel.heightAnchor.constraint(equalToConstant: 20),
       entryDateLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       entryDateLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       entryDateLabel.bottomAnchor.constraint(equalTo: thumbnail.topAnchor, constant: -10)
@@ -157,11 +155,13 @@ class TopListCell: UITableViewCell {
       thumbnail.bottomAnchor.constraint(equalTo: commentsLabel.topAnchor, constant: -10)
     ]
     constraints += [
+      commentsLabel.heightAnchor.constraint(equalToConstant: 20),
       commentsLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       commentsLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       commentsLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor)
     ]
     constraints += [
+      statusLabel.heightAnchor.constraint(equalToConstant: 20),
       statusLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       statusLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       statusLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor)
