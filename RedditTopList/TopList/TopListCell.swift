@@ -146,6 +146,7 @@ class TopListCell: UITableViewCell {
       authorLabel.bottomAnchor.constraint(equalTo: entryDateLabel.topAnchor),
     ]
     constraints += [
+      entryDateLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       entryDateLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       entryDateLabel.bottomAnchor.constraint(equalTo: thumbnail.topAnchor, constant: -10)
     ]
@@ -156,15 +157,17 @@ class TopListCell: UITableViewCell {
       thumbnail.bottomAnchor.constraint(equalTo: commentsLabel.topAnchor, constant: -10)
     ]
     constraints += [
+      commentsLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       commentsLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       commentsLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor)
     ]
     constraints += [
+      statusLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       statusLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       statusLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor)
     ]
     constraints += [
-      titleLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
+      titleLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       titleLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
     ]
