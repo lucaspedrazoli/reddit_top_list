@@ -13,7 +13,7 @@ struct DependencyContainer {
   let userSessionDataSource = UserSessionDataSource()
   let requestFactory = RequestFactory()
 
-  func makeTopListViewController() -> ViewController {
+  private func makeTopListViewController() -> ViewController {
     let topListRepository = TopListRepository(network: networkDataSource,
                                               userSession: userSessionDataSource,
                                               requestFactory: requestFactory)
@@ -23,5 +23,22 @@ struct DependencyContainer {
     viewController.viewModel = viewModel
     viewController.topListView = TopListView()
     return viewController
+  }
+
+  private func makeSplitViewController() -> UISplitViewController {
+    let splitViewController = UISplitViewController()
+    let listNavigationController = UINavigationController(rootViewController: makeTopListViewController())
+    let detailViewController = DetailViewController()
+    let detailNavigationController = UINavigationController(rootViewController: detailViewController)
+    splitViewController.viewControllers = [listNavigationController, detailNavigationController]
+    return splitViewController
+  }
+
+  func makeInitialController() -> UIViewController {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      return makeSplitViewController()
+    } else {
+      return  UINavigationController(rootViewController: makeTopListViewController())
+    }
   }
 }

@@ -6,5 +6,5 @@
 //
 
 protocol SplitControllerlegate {
-  func showDetailItem(_ item: TopListElement)
+  func showDetailItem(_ item: TopListElement?)
 }
