@@ -14,12 +14,14 @@ struct TopListElement: Codable {
   let createdAt: Double
   let commentsCount: Int
   let url: String
+  let postHint: String
   var read: Bool
 
   enum CodingKeys: String, CodingKey {
     case title, author, thumbnail, url
     case commentsCount = "num_comments"
     case createdAt = "created_utc"
+    case postHint = "post_hint"
   }
 
   init(from decoder: Decoder) throws {
@@ -30,11 +32,16 @@ struct TopListElement: Codable {
     createdAt = try data.decode(Double.self, forKey: .createdAt)
     commentsCount = try data.decode(Int.self, forKey: .commentsCount)
     url = try data.decode(String.self, forKey: .url)
+    postHint = try data.decode(String.self, forKey: .postHint)
     read = false
   }
 
   func status() -> String {
     read == true ? "read" : "unread"
+  }
+
+  func isImage() -> Bool {
+    postHint == "image"
   }
 }
 

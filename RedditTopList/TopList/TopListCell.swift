@@ -99,16 +99,26 @@ class TopListCell: UITableViewCell {
 
   @objc func imageTapped() {
     guard let item = item,
-          let url = URL(string: item.url) else { return }
+          let url = URL(string: item.url),
+          item.isImage() else {
+      shake()
+      return
+    }
+    UIApplication.shared.open(url)
     DispatchQueue.global(qos: .background).async {
       if let data = try? Data(contentsOf: url),
          let image = UIImage(data: data) {
           UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        DispatchQueue.main.async {
-          UIApplication.shared.open(url)
-        }
       }
     }
+  }
+
+  func shake() {
+    let shake = CASpringAnimation(keyPath: "position.x")
+    shake.fromValue = self.layer.position.x + 5.0
+    shake.toValue = self.layer.position.x
+    shake.duration = shake.settlingDuration
+    self.layer.add(shake, forKey: nil)
   }
 
   private func addSubviews() {
