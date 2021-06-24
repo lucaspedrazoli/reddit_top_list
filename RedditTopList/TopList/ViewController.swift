@@ -73,8 +73,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     viewModel.load { [weak self] list in
       guard let self = self else { return }
       self.items = list
-      self.splitControllerDelegate?.showDetailItem(list.first)
       DispatchQueue.main.async {
+        self.splitControllerDelegate?.showDetailItem(list.first)
         self.topListView.reload()
       }
     }
