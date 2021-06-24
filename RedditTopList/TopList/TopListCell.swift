@@ -167,6 +167,7 @@ class TopListCell: UITableViewCell {
       statusLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor)
     ]
     constraints += [
+      titleLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor),
       titleLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       titleLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
