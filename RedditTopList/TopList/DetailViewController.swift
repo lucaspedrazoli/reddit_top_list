@@ -102,7 +102,7 @@ class DetailViewController: NiblessViewController, SplitControllerlegate {
       shake()
       return
     }
-    UIApplication.shared.open(url)
+    UIApplication.shared.open(url, options: [:])
     DispatchQueue.global(qos: .background).async {
       if let data = try? Data(contentsOf: url),
          let image = UIImage(data: data) {

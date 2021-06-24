@@ -32,6 +32,7 @@ struct DependencyContainer {
     listViewController.splitControllerDelegate = detailViewController
     let listNavigationController = UINavigationController(rootViewController: listViewController)
     let detailNavigationController = UINavigationController(rootViewController: detailViewController)
+    splitViewController.preferredDisplayMode = .oneBesideSecondary
     splitViewController.setViewController(listNavigationController, for: .primary)
     splitViewController.setViewController(detailNavigationController, for: .secondary)
     return splitViewController
