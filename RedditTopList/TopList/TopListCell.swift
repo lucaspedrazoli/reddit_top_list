@@ -12,7 +12,7 @@ class TopListCell: UITableViewCell {
 
   var item: TopListElement?
   var indexPath: IndexPath?
-  var reloadDelegate: ReloadCellDelegate?
+  weak var reloadDelegate: ReloadCellDelegate?
 
   lazy var container: UIView = {
     let view = UIView()

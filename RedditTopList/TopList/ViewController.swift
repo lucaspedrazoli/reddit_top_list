@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   var viewModel: TopListViewModel!
   var topListView: TopListView!
   var items: [TopListElement] = []
-  var splitControllerDelegate: SplitControllerlegate?
+  weak var splitControllerDelegate: SplitControllerlegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
