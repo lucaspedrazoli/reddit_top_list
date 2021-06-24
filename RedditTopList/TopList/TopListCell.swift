@@ -150,8 +150,8 @@ class TopListCell: UITableViewCell {
     ]
     constraints += [
       thumbnail.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-      thumbnail.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.25),
-      thumbnail.heightAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.25),
+      thumbnail.widthAnchor.constraint(equalToConstant: 100),
+      thumbnail.heightAnchor.constraint(equalToConstant: 100),
       thumbnail.bottomAnchor.constraint(equalTo: commentsLabel.topAnchor, constant: -10)
     ]
     constraints += [
