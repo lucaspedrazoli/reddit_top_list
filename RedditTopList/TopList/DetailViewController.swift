@@ -8,18 +8,25 @@
 import Foundation
 import UIKit
 
-class DetailViewController: NiblessViewController {
+class DetailViewController: NiblessViewController, SplitControllerlegate {
 
-  let delegate: SplitDataSourceDelegate
+  var item: TopListElement?
 
-  init(delegate: SplitDataSourceDelegate) {
-    self.delegate = delegate
-    super.init()
+  lazy var titleLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.textAlignment = .center
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.addSubview(titleLabel)
   }
 
-  func run() {
-    delegate.didSelectItem { (item: TopListElement) in
-      print(item)
-    }
+  func showDetailItem(_ item: TopListElement) {
+    titleLabel.text = item.title
   }
+
 }

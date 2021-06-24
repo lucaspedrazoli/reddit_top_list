@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   var viewModel: TopListViewModel!
   var topListView: TopListView!
   var items: [TopListElement] = []
+  var splitControllerDelegate: SplitControllerlegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,7 +41,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // select detail delegate
+    let item = items[indexPath.row]
+    splitControllerDelegate?.showDetailItem(item)
   }
 
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
