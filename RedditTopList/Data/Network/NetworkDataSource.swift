@@ -9,10 +9,10 @@ import Foundation
 
 struct NetworkDataSource: NetworkDataSourceType {
 
-  private let session: URLSession
-
-  init(session: URLSession = URLSession.shared) {
-    self.session = session
+  private var session: URLSession {
+    let configuration = URLSessionConfiguration.default
+    let session = URLSession(configuration: configuration)
+    return session
   }
 
   func doRequest<T: Codable>(_ request: Request, completion: @escaping (T?) -> Void) {
