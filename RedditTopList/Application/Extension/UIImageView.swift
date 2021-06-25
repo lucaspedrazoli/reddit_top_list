@@ -11,8 +11,9 @@ extension UIImageView {
   func load(url: String) {
     let placeholder =  UIImage(named: "placeholder")
     addImageWithFade(placeholder, interval: 0.3, alpha: 0.5)
-    guard let url = URL(string: url) else { return }
-    DispatchQueue.global().async { [weak self] in
+    guard let url = URL(string: url),
+          url != URL(string: "nsfw") else { return }
+    DispatchQueue.global(qos: .background).async { [weak self] in
       guard let data = try? Data(contentsOf: url) else { return }
       guard let image = UIImage(data: data) else { return }
       DispatchQueue.main.async {
