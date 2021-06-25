@@ -30,7 +30,7 @@ class TopListViewModel {
                         currentRow: Int,
                         _ completion: @escaping ([TopListElement]) -> Void) {
     guard let id = lastItemId,
-          !isPaginating,
+          isPaginating == false,
           isLastRow(totalRows: itemsCount, currentRow: currentRow) else { return }
     isPaginating = true
     topListRepository.paginate(lastItemId: id, itemsCount: itemsCount) { [weak self] element in
