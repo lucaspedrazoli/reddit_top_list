@@ -130,9 +130,11 @@ class TopListCell: UITableViewCell {
 
   private func installConstraints() {
     let margin = contentView.layoutMarginsGuide
+    let containerBottom = container.bottomAnchor.constraint(equalTo: margin.bottomAnchor)
+    containerBottom.priority = .defaultHigh
+    containerBottom.isActive = true
     var constraints = [
       container.topAnchor.constraint(equalTo: margin.topAnchor),
-      container.bottomAnchor.constraint(equalTo: margin.bottomAnchor),
       container.leadingAnchor.constraint(equalTo: margin.leadingAnchor),
       container.trailingAnchor.constraint(equalTo: margin.trailingAnchor),
     ]
@@ -142,11 +144,13 @@ class TopListCell: UITableViewCell {
       authorLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
       authorLabel.bottomAnchor.constraint(equalTo: entryDateLabel.topAnchor),
     ]
+    let entryDateLabelBottom = entryDateLabel.bottomAnchor.constraint(equalTo: thumbnail.topAnchor, constant: -10)
+    entryDateLabelBottom.priority = .defaultHigh
+    entryDateLabelBottom.isActive = true
     constraints += [
       entryDateLabel.heightAnchor.constraint(equalToConstant: 20),
       entryDateLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor),
       entryDateLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-      entryDateLabel.bottomAnchor.constraint(equalTo: thumbnail.topAnchor, constant: -10)
     ]
     constraints += [
       thumbnail.centerXAnchor.constraint(equalTo: container.centerXAnchor),
