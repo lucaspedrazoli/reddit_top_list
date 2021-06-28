@@ -38,8 +38,8 @@ struct DependencyContainer {
     return splitViewController
   }
 
-  func makeInitialController() -> UIViewController {
-    if UIDevice.current.userInterfaceIdiom == .pad {
+  func makeInitialController(for device: UIUserInterfaceIdiom) -> UIViewController {
+    if device == .pad {
       return makeSplitViewController()
     } else {
       return  UINavigationController(rootViewController: makeTopListViewController())

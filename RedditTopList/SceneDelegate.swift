@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     let dependencyContainer = DependencyContainer()
     window = UIWindow(windowScene: windowScene)
-    window?.rootViewController = dependencyContainer.makeInitialController()
+    window?.rootViewController = dependencyContainer.makeInitialController(for: UIDevice.current.userInterfaceIdiom)
     window?.makeKeyAndVisible()
   }
 
