@@ -161,10 +161,13 @@ class DetailViewController: NiblessViewController, SplitControllerlegate {
       statusLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       statusLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor)
     ]
+    let titleLabelTop = titleLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 10)
+    titleLabelTop.priority = .defaultHigh
+    titleLabelTop.isActive = true
     constraints += [
       titleLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
       titleLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-      titleLabel.heightAnchor.constraint(equalToConstant: 50)
+      titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 30)
     ]
     NSLayoutConstraint.activate(constraints)
   }
