@@ -13,7 +13,6 @@ class TopListViewModelTests: XCTestCase {
 
   var viewModel: TopListViewModel!
 
-
   override func setUp() {
     super.setUp()
     var repository = TopListRepositoryMock()
