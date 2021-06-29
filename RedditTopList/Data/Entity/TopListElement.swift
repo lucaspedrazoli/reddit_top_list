@@ -24,6 +24,35 @@ struct TopListElement: Codable {
     case postHint = "post_hint"
   }
 
+  static func empty() -> TopListElement {
+    let timestamp = Date().timeIntervalSince1970
+    return TopListElement(title: "title",
+                          author: "author",
+                          thumbnail: "thumb",
+                          createdAt: timestamp,
+                          commentsCount: 0,
+                          url: "url",
+                          postHint: "post_hint")
+  }
+
+  init(title: String,
+       author: String,
+       thumbnail: String,
+       createdAt: Double,
+       commentsCount: Int,
+       url: String,
+       postHint: String,
+       read: Bool = false) {
+    self.title = title
+    self.author = author
+    self.thumbnail = thumbnail
+    self.createdAt = createdAt
+    self.commentsCount = commentsCount
+    self.url = url
+    self.postHint = postHint
+    self.read = read
+  }
+
   init(from decoder: Decoder) throws {
     let data = try decoder.container(keyedBy: CodingKeys.self)
     title = try data.decode(String.self, forKey: .title)
