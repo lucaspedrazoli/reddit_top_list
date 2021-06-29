@@ -48,6 +48,7 @@
 		759CFA302683D6AB0023E7FA /* ReloadCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CFA2F2683D6AB0023E7FA /* ReloadCellDelegate.swift */; };
 		75FE519E268B9149005D3D43 /* TopListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE519D268B9149005D3D43 /* TopListViewModelTests.swift */; };
 		75FE51A0268B9876005D3D43 /* TopListRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE519F268B9876005D3D43 /* TopListRepositoryMock.swift */; };
+		75FE51A2268BB3C2005D3D43 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51A1268BB3C2005D3D43 /* DependencyContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		759CFA2F2683D6AB0023E7FA /* ReloadCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadCellDelegate.swift; sourceTree = "<group>"; };
 		75FE519D268B9149005D3D43 /* TopListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewModelTests.swift; sourceTree = "<group>"; };
 		75FE519F268B9876005D3D43 /* TopListRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoryMock.swift; sourceTree = "<group>"; };
+		75FE51A1268BB3C2005D3D43 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				7565517A268110AB000F8976 /* RedditTopListTests.swift */,
 				7565517C268110AB000F8976 /* Info.plist */,
 				75FE519D268B9149005D3D43 /* TopListViewModelTests.swift */,
+				75FE51A1268BB3C2005D3D43 /* DependencyContainerTests.swift */,
 				75FE519F268B9876005D3D43 /* TopListRepositoryMock.swift */,
 			);
 			path = RedditTopListTests;
@@ -472,6 +475,7 @@
 			files = (
 				75FE519E268B9149005D3D43 /* TopListViewModelTests.swift in Sources */,
 				75FE51A0268B9876005D3D43 /* TopListRepositoryMock.swift in Sources */,
+				75FE51A2268BB3C2005D3D43 /* DependencyContainerTests.swift in Sources */,
 				7565517B268110AB000F8976 /* RedditTopListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
