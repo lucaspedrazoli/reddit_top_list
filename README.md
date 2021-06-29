@@ -33,6 +33,7 @@ Following the dependency rules, the circles represents different areas in the sy
 * The `storyboard` were used superficially. Just to follow the guideline. I hope this is not a problem 👍
 * When you open an image in the browser it will save **automatically** in your device.
 * App state-preservation/restoration were made with `NSUserActivity`. A boolean value that represents a user interaction will be saved just to demonstrate the feature, since the app does not persist the table view data.
+* The list will paginate automatically when the user reaches the last row of the tableview.
 
 
 
