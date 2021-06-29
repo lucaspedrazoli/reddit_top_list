@@ -27,6 +27,7 @@ class TopListViewModelTests: XCTestCase {
 
   func testPaginationNotLastRow() {
     var paginated = false
+    viewModel.load({ _ in })
     viewModel.handlePagination(itemsCount: 10, currentRow: 1, { _ in
       paginated = true
     })
@@ -40,6 +41,14 @@ class TopListViewModelTests: XCTestCase {
       paginated = true
     })
     XCTAssertTrue(paginated)
+  }
+
+  func testPaginationNoLoad() {
+    var paginated = false
+    viewModel.handlePagination(itemsCount: 11, currentRow: 10, { _ in
+      paginated = true
+    })
+    XCTAssertFalse(paginated)
   }
 
   private func createTopList() -> TopList{
