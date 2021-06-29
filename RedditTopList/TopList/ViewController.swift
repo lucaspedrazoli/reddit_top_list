@@ -12,32 +12,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   var continuationActivity: NSUserActivity {
     let activity = NSUserActivity(activityType: "com.myapp.restoration")
     activity.persistentIdentifier = UUID().uuidString
-    activity.addUserInfoEntries(from: ["Count":self.count])
+    activity.title = "restoration"
+    activity.addUserInfoEntries(from: ["list_clear": listClearPressed])
     return activity
-  }
-
-  func continueFrom(activity: NSUserActivity) {
-    let count = activity.userInfo?["Count"] as? Int ?? 0
-    self.count = count
   }
 
   var viewModel: TopListViewModel!
   var topListView: TopListView!
   var items: [TopListElement] = []
   weak var splitControllerDelegate: SplitControllerlegate?
-  var count = 100
-  let label = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
+  private var listClearPressed = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
     loadData()
-    view.addSubview(label)
-    label.text = "LOAD COUNT \(self.count)"
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  func continueFrom(activity: NSUserActivity) {
+    listClearPressed = activity.userInfo?["list_clear"] as? Bool ?? false
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,8 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let count = items.count
     items.removeAll()
     topListView.clear(itemsCount: count)
-    self.count += 1
-    label.text = "COUNT: \(self.count)"
+    listClearPressed = true
   }
 
   private func setupUI() {

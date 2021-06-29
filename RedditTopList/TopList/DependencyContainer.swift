@@ -42,7 +42,8 @@ struct DependencyContainer {
     if device == .pad {
       return makeSplitViewController()
     } else {
-      return  UINavigationController(rootViewController: makeTopListViewController())
+      let navigationController = UINavigationController(rootViewController: makeTopListViewController())
+      return navigationController
     }
   }
 }
