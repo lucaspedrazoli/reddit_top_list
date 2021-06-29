@@ -72,9 +72,6 @@ class DetailViewController: NiblessViewController, SplitControllerlegate {
     imageView.layer.cornerRadius = 16.0
     imageView.clipsToBounds = true
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-    imageView.isUserInteractionEnabled = true
-    imageView.addGestureRecognizer(tapGestureRecognizer)
     return imageView
   }()
 
@@ -93,22 +90,6 @@ class DetailViewController: NiblessViewController, SplitControllerlegate {
     commentsLabel.text = "comments: \(item.commentsCount)"
     statusLabel.text = "status: \(item.status())"
     titleLabel.text = "title: \(item.title)"
-  }
-
-  @objc func imageTapped() {
-    guard let item = item,
-          let url = URL(string: item.url),
-          item.isImage() else {
-      shake()
-      return
-    }
-    UIApplication.shared.open(url, options: [:])
-    DispatchQueue.global(qos: .background).async {
-      if let data = try? Data(contentsOf: url),
-         let image = UIImage(data: data) {
-          UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-      }
-    }
   }
 
   func shake() {

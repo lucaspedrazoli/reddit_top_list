@@ -65,10 +65,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
   }
 
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return UITableView.automaticDimension
-  }
-
   func onPaginate(_ newItems: [TopListElement]) {
     let newRows = IndexPath.createRows(newItems.count, startingAt: items.count)
     topListView.tableView.beginUpdates()
@@ -80,6 +76,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   func reloadCell(at indexPath: IndexPath) {
     items[indexPath.row].read = true
     topListView.reloadCell(at: indexPath)
+    splitControllerDelegate?.showDetailItem(items[indexPath.row])
   }
 
   @objc func loadData() {
